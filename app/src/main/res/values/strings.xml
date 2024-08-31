@@ -3,4 +3,6 @@
     <string name="ayuda_galeria">Para seleccionar una imágen presione el boton Rojo, Cuando esté listo presione el Boton verde</string>
     <string name="text_clase">Clase :</string>
     <string name="texto_cambiar">Cambiar</string>
+    <string name="aviso_inicio_de_sesion">Para usar la aplicación necesitarás una cuenta</string>
+    <string name="nombre_app_inicio">Sberry IA</string>
 </resources>
