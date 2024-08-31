@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
-import com.example.sberry_ia20.ml.Modelo;
+import com.example.sberry_ia20.ml.Modelodos;
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
@@ -49,14 +49,14 @@ public class activity_resultado extends AppCompatActivity {
             else{
 
                 String nom_arch=ruta2.toString();
-                Toast.makeText(this, "Se recibió el archivo desde galeria: " + nom_arch.substring(nom_arch.lastIndexOf("/") + 1), Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "Se recibió el archivo desde galería: " + nom_arch.substring(nom_arch.lastIndexOf("/") + 1), Toast.LENGTH_LONG).show();
                 muestra.setImageURI(ruta2);
                 desde_camara="N";
 
                 }
         }
         else{
-                Toast.makeText(this, "Se recibió el archivo desde cámara: " + ruta.substring(ruta.lastIndexOf("/") + 1), Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "Se recibió el archivo desde cámara: " + ruta.substring(ruta.lastIndexOf("/") + 1), Toast.LENGTH_LONG).show();
                 muestra.setImageURI(Uri.fromFile(new File(ruta)));
 //                ruta_principal=Uri.fromFile(new File(ruta));
                 desde_camara="Y";
@@ -69,26 +69,27 @@ public class activity_resultado extends AppCompatActivity {
         int startY = 0;
 
         try {
-
             if (imagen_bit != null && imagen_bit.getWidth() > 0 && imagen_bit.getHeight() > 0) {
                 // Paso 1: Recortar la imagen a un cuadrado de 419x419 píxeles
                 int width = imagen_bit.getWidth();
                 int height = imagen_bit.getHeight();
-                if(desde_camara=="Y"){
-                    newWidth = 1000;
-                    newHeight = 1000;
-                    startX = (width - newWidth) / 2;
-                    startY = (height - newHeight) / 2;
-
-                }else{
-
-                    newWidth = 224;
-                    newHeight = 224;
+                if (width > height) {
+                    int m = width / 2;
+                    startX = m - (height / 2);
+                    newHeight = height;
+                    newWidth = height;
+                } else if (width < height) {
+                    int n = height / 2;
+                    startY = n - (width / 2);
+                    newHeight = width;
+                    newWidth = width;
+                } else { // width == height
+                    newWidth = width;
+                    newHeight = height;
                 }
-
-                // Calcular las coordenadas para recortar la imagen
-                startX = (width - newWidth) / 2;
-                startY = (height - newHeight) / 2;
+            } else {
+                Toast.makeText(this, "Error en la imagen, no se puede redimensionar", Toast.LENGTH_SHORT).show();
+            };
 
                 Bitmap croppedBitmap = Bitmap.createBitmap(imagen_bit, startX, startY, newWidth, newHeight);
 
@@ -97,7 +98,7 @@ public class activity_resultado extends AppCompatActivity {
                 //muestra.setImageBitmap(scaledBitmap);
 //comienza la implementacion del modelo
                 try {
-                    Modelo model = Modelo.newInstance(getApplicationContext());
+                    Modelodos model = Modelodos.newInstance(getApplicationContext());
 
                     TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
                     ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4*224*224*3);//TensorImage.fromBitmap(scaledBitmap).getBuffer()
@@ -121,7 +122,7 @@ public class activity_resultado extends AppCompatActivity {
                     inputFeature0.loadBuffer(byteBuffer);
 
                     // Runs model inference and gets result.
-                    Modelo.Outputs outputs = model.process(inputFeature0);
+                    Modelodos.Outputs outputs = model.process(inputFeature0);
                     TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
                     String cadena = getMax(outputFeature0.getFloatArray());
                     String clase_final = cadena.substring(0, cadena.lastIndexOf("/"));
@@ -136,9 +137,7 @@ public class activity_resultado extends AppCompatActivity {
                     Toast.makeText(this, "IOException", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
-            } else {
-                Toast.makeText(this, "Error en la imagen, no se puede redimensionar", Toast.LENGTH_SHORT).show();
-            }
+
 
         } finally {
             if (inputStream != null) {
