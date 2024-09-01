@@ -71,7 +71,7 @@ public class loginActivity extends AppCompatActivity {
             }
         });
 
-        // Listener para login anónimo (comentado)
+        // Listener para login anónimo
         /*btn_login_anonymous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +79,7 @@ public class loginActivity extends AppCompatActivity {
             }
         });*/
     }
-
+/*
     private void loginAnonymous() {
         mAuth.signInAnonymously()
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -97,7 +97,7 @@ public class loginActivity extends AppCompatActivity {
                     }
                 });
     }
-
+*/
     private void loginUser(String emailUser, String passUser) {
         mAuth.signInWithEmailAndPassword(emailUser, passUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override

@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#051359"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingTop="60dp"
@@ -45,10 +46,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusTopStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
             app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusBottomEnd="16dp">
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/reg_correo"
@@ -56,7 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:hint="Correo"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColorLink="#040404" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -64,10 +66,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusTopStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
             app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -78,7 +80,7 @@
                 android:ems="10"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
-                android:textColorHint="@color/white" />
+                android:textColorHint="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -86,10 +88,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusTopStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
             app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -99,7 +101,7 @@
                 android:layout_margin="10dp"
                 android:hint="Confirmar contraseña"
                 android:inputType="textPassword"
-                android:textColorHint="@color/white" />
+                android:textColorHint="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,16 +109,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+
             <Button
-                android:id="@+id/reg_re"
+                android:id="@+id/reg_regresar"
                 android:layout_width="133dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/boton_sintexto"
                 android:text="Regresar"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 app:iconTint="#417C77" />
+
             <Button
                 android:id="@+id/reg_enviar"
                 android:layout_width="133dp"
@@ -125,7 +129,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/boton_sintexto"
                 android:text="Registrar"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 app:iconTint="#2EF4B6" />
 
 
