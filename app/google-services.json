@@ -1,8 +1,8 @@
 {
   "project_info": {
     "project_number": "99008720436",
-    "project_id": "sberryia",
-    "storage_bucket": "sberryia.appspot.com"
+    "project_id": "sberry-ia",
+    "storage_bucket": "sberry-ia.appspot.com"
   },
   "client": [
     {
@@ -12,7 +12,12 @@
           "package_name": "com.epsiloncob.sberryia"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "99008720436-hpafqd33b5tpp054nblil3nq8jdm5bru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDEsGJA7vnziPQp1whJMCx0fg1HvDXQl0c"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99008720436-hpafqd33b5tpp054nblil3nq8jdm5bru.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

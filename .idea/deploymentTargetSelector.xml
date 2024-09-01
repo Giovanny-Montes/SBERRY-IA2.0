@@ -2,7 +2,7 @@
 <project version="4">
   <component name="deploymentTargetSelector">
     <selectionStates>
-      <SelectionState runConfigName="SberryIaconlogin">
+      <SelectionState runConfigName="SBERRY-IA2.0">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
