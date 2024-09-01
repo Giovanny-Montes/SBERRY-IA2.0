@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "99008720436",
+    "project_id": "sberryia",
+    "storage_bucket": "sberryia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99008720436:android:a0035019fd4ccf95b72461",
+        "android_client_info": {
+          "package_name": "com.epsiloncob.sberryia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEsGJA7vnziPQp1whJMCx0fg1HvDXQl0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
