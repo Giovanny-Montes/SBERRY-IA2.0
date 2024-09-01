@@ -7,13 +7,14 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.sberryia"
+        applicationId = "com.epsiloncob.sberryia"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 31
         versionCode = 1
         versionName = "2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig = signingConfigs.getByName("debug")
     }
 
     buildTypes {
@@ -32,6 +33,7 @@ android {
     buildFeatures {
         mlModelBinding = true
     }
+    buildToolsVersion = "30.0.2"
 }
 
 dependencies {
