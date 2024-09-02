@@ -4,6 +4,13 @@
     "project_id": "sberry-ia",
     "storage_bucket": "sberry-ia.appspot.com"
   },
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.epsiloncob.sberryia",
+    "sha256_cert_fingerprints":
+    ["73:28:7D:32:64:2F:C7:FA:86:A6:8C:50:05:00:C0:EE:E0:44:8F:99:EC:04:9E:D8:E0:D0:92:C4:CA:1A:44:36"]
+  },
   "client": [
     {
       "client_info": {

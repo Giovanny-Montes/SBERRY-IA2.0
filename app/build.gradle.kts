@@ -55,12 +55,13 @@ dependencies {
     implementation ("androidx.camera:camera-view:1.3.4")
     // Import the BoM for the Firebase platform
     implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
-
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
     implementation("com.google.firebase:firebase-auth:23.0.0")
     // Also add the dependency for the TensorFlow Lite library and specify its version
     implementation("org.tensorflow:tensorflow-lite:2.16.1")
     implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
     implementation("org.tensorflow:tensorflow-lite-metadata:0.4.4")
     //implementation("org.tensorflow:tensorflow-lite-gpu:2.9.0")
+    //modulo para inciar con credenciales guardadas
 
 }

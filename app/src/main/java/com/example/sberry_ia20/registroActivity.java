@@ -71,11 +71,11 @@ public class registroActivity extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
-                            Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Registro Exitoso, Bienvenido!", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(this, MainActivity.class));
                             finish();
                         } else {
-                            Toast.makeText(this, "Registro falló", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "El Registro falló", Toast.LENGTH_SHORT).show();
                         }
                     });
         } else {
