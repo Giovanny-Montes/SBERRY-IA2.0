@@ -15,11 +15,13 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -165,13 +167,15 @@ public class loginActivity extends AppCompatActivity implements GoogleApiClient.
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this); // Correct usage
 
-        if (user != null || acct != null) {
+        if (firebaseUser != null || googleUser != null) {
             startActivity(new Intent(loginActivity.this, MainActivity.class));
             finish();
         }
     }
+
     /*
     @Override
     protected void onResume() {
