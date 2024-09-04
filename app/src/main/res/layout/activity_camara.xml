@@ -17,34 +17,36 @@
         android:layout_height="300dp"
         android:layout_centerInParent="true"
         android:adjustViewBounds="true"
-        android:background="#3E09EDDA"
+        android:background="#3EDDE7E6"
+        android:importantForAccessibility="no"
         android:src="@android:drawable/ic_menu_mylocation" />
 
     <ImageButton
         android:id="@+id/boton_aceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:background="#00FFFFFF"
         android:onClick="resultado"
         android:scaleX="0.5"
         android:scaleY="0.5"
-        app:srcCompat="@drawable/solicit_accept_check_ok_theaction_6340__1_" />
+        app:srcCompat="@drawable/anydo_104098"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/boton_rechazar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
         android:layout_alignParentBottom="true"
         android:background="#00FFFFFF"
         android:onClick="regresar_menu"
         android:scaleX="0.5"
         android:scaleY="0.5"
-        app:srcCompat="@drawable/cancellationbutton_exitneartheaction_botondecancelacion_salida_6335" />
+        app:srcCompat="@drawable/cancel_icon_icons_com_73703"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/flipCamera"
@@ -52,14 +54,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/toggleFlash"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="false"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="false"
         android:background="#00FFFFFF"
         android:scaleX=".9"
         android:scaleY=".9"
         android:src="@drawable/camera_reverse_icon_235167"
-        app:tint="#fff" />
+        app:tint="#fff"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/capture"
@@ -71,7 +73,8 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:scaleType="centerCrop"
         android:src="@drawable/_36shutter_99926"
-        app:tint="#fff" />
+        app:tint="#fff"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/toggleFlash"
@@ -83,7 +86,8 @@
         android:scaleX=".8"
         android:scaleY=".8"
         android:src="@drawable/baseline_flash_on_24"
-        app:tint="#fff" />
+        app:tint="#fff"
+        tools:ignore="ContentDescription" />
 
 </RelativeLayout>
 

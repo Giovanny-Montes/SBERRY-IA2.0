@@ -52,10 +52,11 @@ public class MainActivity extends AppCompatActivity {
     public void opciones_usuario(View view){
 
         startActivity(new Intent(this,activity_usuario.class));
-    }
+    }*/
     public void manual_usuario(View view) {
-        startActivity(new Intent(this, activity_manual.class));
+        startActivity(new Intent(this, activity_manual_usuario.class));
     }
+    /*
     public void contribuciones(View view){
         startActivity(new Intent(this,activity_contribuciones.class));
     }
