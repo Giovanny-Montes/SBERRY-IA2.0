@@ -7,70 +7,120 @@
     android:background="#050505"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="315dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/colpos" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="251dp"
-        android:layout_height="216dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
-        app:srcCompat="@drawable/logo_sin_fondo" />
-
-    <Button
-        android:id="@+id/boton_entrar"
-        android:layout_width="118dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="16dp"
-        android:onClick="entrar"
-        android:text="Entrar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
+    <TextView
         android:id="@+id/editTextText2"
-        android:layout_width="98dp"
-        android:layout_height="29dp"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
         android:clickable="false"
         android:contextClickable="false"
-        android:cursorVisible="false"
         android:defaultFocusHighlightEnabled="false"
         android:ems="10"
-        android:inputType="text"
         android:text="Powered by TensorFlow"
         android:textColor="#F3F0F0"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="SBerry IA Ver. 2.0"
-        android:textAlignment="center"
-        android:textColor="#FAF5F5"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.735" />
+        tools:ignore="HardcodedText,SmallSp" />
 
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="279dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="251dp"
+                    android:layout_height="216dp"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/logo_sin_fondo"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:fontFamily="monospace"
+                    android:text="SBerry IA Ver. 2.0"
+                    android:textAlignment="center"
+                    android:textColor="#FAF5F5"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView"
+                tools:layout_editor_absoluteX="16dp">
+
+                <Button
+                    android:id="@+id/boton_salir"
+                    android:layout_width="118dp"
+                    android:layout_height="57dp"
+                    android:layout_margin="16dp"
+                    android:onClick="salir"
+                    android:text="Salir"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/boton_entrar"
+                    android:layout_width="118dp"
+                    android:layout_height="57dp"
+                    android:layout_margin="16dp"
+                    android:onClick="entrar"
+                    android:text="Entrar" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/iconImageView"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/anydo_104098" />
+
+                <TextView
+                    android:id="@+id/descriptionTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:padding="16dp"
+
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Description" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

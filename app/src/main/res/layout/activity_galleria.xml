@@ -5,60 +5,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_galleria">>
+    tools:context=".activity_galleria">
 
-    <ImageView
-        android:id="@+id/selected_image"
-        android:layout_width="407dp"
-        android:layout_height="579dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421"
-        tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/aviso_galeria"
-        android:layout_width="325dp"
-        android:layout_height="86dp"
-        android:background="#E1BEE7"
-        android:padding="16dp"
-        android:text="@string/ayuda_galeria"
-        android:textAlignment="center"
-        android:textColor="#0B0B0B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/btn_open_gallery"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/aviso_galeria"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:background="#E1BEE7"
+            android:padding="16dp"
+            android:text="Para selecionar una imagen de la galería, presione el botón inferior izquierdo!"
+            android:textAlignment="center"
+            android:textColor="#0B0B0B"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/selected_image"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.964"
-        app:srcCompat="@drawable/cancel_icon_icons_com_73703" />
+        android:layout_margin="16dp">
 
-    <ImageButton
-        android:id="@+id/boton_resultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#00FFFFFF"
-        android:onClick="resultado"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975"
-        app:srcCompat="@drawable/anydo_104098" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btn_open_gallery"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="#00FFFFFF"
+                    android:padding="11dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/gallery_icon_icons_com_76885" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Galería"
+                    tools:ignore="HardcodedText">
+                    </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/boton_resultado"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:onClick="resultado"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/anydo_104098"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/texto_continuar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Continuar"
+                    tools:ignore="HardcodedText">
+                    </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
