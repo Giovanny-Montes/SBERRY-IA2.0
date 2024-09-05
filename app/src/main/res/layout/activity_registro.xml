@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#051359"
+        android:background="#043056"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingTop="60dp"
@@ -26,13 +26,15 @@
             android:padding="10dp"
             android:text="Ingrese sus datos para registrarse"
             android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/btnGoogle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logo"
-            app:layout_constraintVertical_bias="0.056" />
+            app:layout_constraintVertical_bias="0.056"
+            tools:ignore="HardcodedText" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -45,6 +47,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="16dp"
             app:boxCornerRadiusBottomStart="16dp"
@@ -55,10 +58,11 @@
                 android:id="@+id/reg_correo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="30dp"
                 android:hint="Correo"
                 android:inputType="textEmailAddress"
-                android:textColorLink="#040404" />
+                android:padding="16dp"
+                tools:ignore="HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -76,8 +80,7 @@
                 android:id="@+id/reg_con"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
+                android:layout_margin="30dp"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
                 android:textColorHint="@color/black" />
@@ -98,39 +101,39 @@
                 android:id="@+id/reg_con2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="30dp"
                 android:hint="Confirmar contraseña"
                 android:inputType="textPassword"
-                android:textColorHint="@color/black" />
+                android:textColorHint="@color/black"
+                tools:ignore="HardcodedText" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <Button
                 android:id="@+id/reg_regresar"
                 android:layout_width="133dp"
                 android:layout_height="50dp"
-                android:layout_margin="5dp"
+                android:layout_margin="16dp"
                 android:layout_weight="1"
-                android:background="@drawable/boton_sintexto"
                 android:text="Regresar"
-                android:textColor="@color/black"
-                app:iconTint="#417C77" />
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/reg_enviar"
                 android:layout_width="133dp"
                 android:layout_height="50dp"
-                android:layout_margin="5dp"
+                android:layout_margin="16dp"
                 android:layout_weight="1"
-                android:background="@drawable/boton_sintexto"
                 android:text="Registrar"
-                android:textColor="@color/black"
-                app:iconTint="#2EF4B6" />
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
 
 
         </LinearLayout>

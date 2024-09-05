@@ -46,13 +46,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void salir(View view){
-        finish();
+
+        finishAffinity();
     }
-    /* Falta el menú de opciones del usuario
+
     public void opciones_usuario(View view){
 
         startActivity(new Intent(this,activity_usuario.class));
-    }*/
+    }
     public void manual_usuario(View view) {
         startActivity(new Intent(this, activity_manual_usuario.class));
     }
