@@ -1,11 +1,10 @@
-package com.example.sberry_ia20;
+package com.example.amai_b;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 public class activity_eleccion extends AppCompatActivity {
 

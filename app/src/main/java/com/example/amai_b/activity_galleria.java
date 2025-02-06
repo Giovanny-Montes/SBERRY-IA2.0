@@ -1,4 +1,4 @@
-package com.example.sberry_ia20;
+package com.example.amai_b;
 
 import static android.widget.Toast.LENGTH_SHORT;
 

@@ -1,4 +1,4 @@
-package com.example.sberry_ia20;
+package com.example.amai_b;
 /*
 # Copyright 2024 Giovanny M.R.
 
@@ -16,19 +16,11 @@ package com.example.sberry_ia20;
 
 
  */
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.sberry_ia20;
+package com.example.amai_b;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
-import com.example.sberry_ia20.ml.Modelodos;
+import com.example.amai_b.ml.Modelodos;
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;

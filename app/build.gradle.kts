@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "com.example.sberry_ia20"
+    namespace = "com.example.amai_b"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.epsiloncob.sberryia"
+        applicationId = "com.epsiloncob.amai_b"
         minSdk = 28
         targetSdk = 33
         versionCode = 1
-        versionName = "2.0"
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         signingConfig = signingConfigs.getByName("debug")
@@ -34,11 +34,11 @@ android {
     buildFeatures {
         mlModelBinding = true
     }
-    buildToolsVersion = "30.0.2"
 }
 
 dependencies {
     implementation("androidx.activity:activity:1.9.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.firebase:firebase-auth:23.0.0")
     implementation("com.android.support:support-annotations:28.0.0")
     implementation("androidx.media3:media3-common:1.4.1")

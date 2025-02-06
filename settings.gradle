@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SBERRY-IA2.0"
+rootProject.name = "AMAI-B"
 include(":app")

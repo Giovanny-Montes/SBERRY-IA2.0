@@ -1,44 +1,26 @@
 {
   "project_info": {
-    "project_number": "99008720436",
-    "project_id": "sberry-ia",
-    "storage_bucket": "sberry-ia.appspot.com"
+    "project_number": "41174541673",
+    "project_id": "amai-b",
+    "storage_bucket": "amai-b.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:99008720436:android:a0035019fd4ccf95b72461",
+        "mobilesdk_app_id": "1:41174541673:android:6427e6f603b9c53a8349f8",
         "android_client_info": {
-          "package_name": "com.epsiloncob.sberryia"
+          "package_name": "com.epsiloncob.amai_b"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "99008720436-b680b6b8k0rkl02hailke5vto1pk6g4c.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.epsiloncob.sberryia",
-            "certificate_hash": "59f65bd4e70f9051c02b7143ff6d8b4da5340a6e"
-          }
-        },
-        {
-          "client_id": "99008720436-hpafqd33b5tpp054nblil3nq8jdm5bru.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDEsGJA7vnziPQp1whJMCx0fg1HvDXQl0c"
+          "current_key": "AIzaSyCwnGRDSE13Z_guHg5V16baRFjj8FEywM0"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "99008720436-hpafqd33b5tpp054nblil3nq8jdm5bru.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
