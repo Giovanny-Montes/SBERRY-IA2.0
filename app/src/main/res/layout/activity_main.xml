@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,112 +7,104 @@
     android:background="#050505"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/editTextText2"
-        android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:clickable="false"
-        android:contextClickable="false"
-        android:defaultFocusHighlightEnabled="false"
-        android:ems="10"
-        android:text="Powered by TensorFlow"
-        android:textColor="#000000"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="HardcodedText,SmallSp" />
-
 
     <LinearLayout
+
         android:id="@+id/linearLayout7"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#8A596AC1"
-        android:orientation="vertical">
+        android:background="#B2EBF2"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="-5dp">
 
         <LinearLayout
-            android:id="@+id/linearLayout6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical"
-            tools:ignore="MissingConstraints">
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/linearLayout5"
-                android:layout_width="match_parent"
-                android:layout_height="279dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="251dp"
+                android:layout_height="216dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:srcCompat="@drawable/_e1be88e"
+                tools:ignore="ContentDescription" />
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="251dp"
-                    android:layout_height="216dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/logo_sin_fondo"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:fontFamily="monospace"
-                    android:text="SBerry-I.A. 2.0"
-                    android:textAlignment="center"
-                    android:textColor="#FFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="HardcodedText" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:gravity="center_horizontal"
-                android:padding="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/imageView"
-                tools:layout_editor_absoluteX="16dp">
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:backgroundTint="#51180D0D"
+                android:fontFamily="monospace"
+                android:text="AMAI-B"
+                android:textAlignment="center"
+                android:textColor="#100C0C"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
 
-                <Button
-                    android:id="@+id/boton_salir"
-                    android:layout_width="118dp"
-                    android:layout_height="57dp"
-                    android:layout_margin="16dp"
-                    android:onClick="salir"
-                    android:text="Salir"
-                    tools:ignore="ButtonStyle,HardcodedText" />
-
-                <Button
-                    android:id="@+id/boton_entrar"
-                    android:layout_width="118dp"
-                    android:layout_height="57dp"
-                    android:layout_margin="16dp"
-                    android:onClick="entrar"
-                    android:text="Entrar"
-                    tools:ignore="HardcodedText" />
-
-            </LinearLayout>
-            //
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="243dp"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#758C8688"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:textColor="#FFFFFF">
+                android:layout_width="410dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="112dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/boton_salir"
+                            android:layout_width="118dp"
+                            android:layout_height="57dp"
+                            android:layout_gravity="center|center_horizontal|center_vertical"
+                            android:layout_margin="16dp"
+                            android:onClick="salir"
+                            android:text="Salir"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+
+                        <Button
+                            android:id="@+id/boton_entrar"
+                            android:layout_width="118dp"
+                            android:layout_height="57dp"
+                            android:layout_gravity="center|center_horizontal|center_vertical"
+                            android:layout_margin="16dp"
+                            android:onClick="entrar"
+                            android:text="Entrar"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="8dp"
+                    android:background="#E9D4D4"
                     android:gravity="center_vertical"
                     android:onClick="opciones_usuario"
                     android:orientation="horizontal"
-                    android:padding="8dp">
+                    android:padding="12dp">
 
                     <ImageView
                         android:id="@+id/ico_opciones_usuario"
@@ -128,17 +119,20 @@
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
                         android:text="Usuario"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#040303"
                         tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="8dp"
+                    android:background="#E9D4D4"
                     android:gravity="center_vertical"
                     android:onClick="manual_usuario"
                     android:orientation="horizontal"
-                    android:padding="8dp"
+                    android:padding="12dp"
                     android:textColor="#FFFFFF">
 
                     <ImageView
@@ -154,63 +148,13 @@
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
                         android:text="Manual"
-                        android:textColor="#FFFFFF"
-                        tools:ignore="HardcodedText" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:onClick="contribuciones"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:id="@+id/ico_contribuciones"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/person_account_file_folder_document_icon_124634" />
-
-                    <TextView
-                        android:id="@+id/id_contribuciones"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_weight="1"
-                        android:text="Contribuciones"
-                        android:textColor="#FFFFFF"
-                        tools:ignore="HardcodedText" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:onClick="alerta_temprana"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:id="@+id/ico_alerta_temprana"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/add_new_create_map_location_icon_124696" />
-
-                    <TextView
-                        android:id="@+id/id_alerta_temprana"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_weight="1"
-                        android:text="Sistema de Alerta Temprana"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#000000"
                         tools:ignore="HardcodedText" />
                 </LinearLayout>
             </LinearLayout>
 
-
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

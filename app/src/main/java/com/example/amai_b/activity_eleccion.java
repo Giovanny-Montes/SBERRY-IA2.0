@@ -22,4 +22,7 @@ public class activity_eleccion extends AppCompatActivity {
         Intent entrar = new Intent(activity_eleccion.this,activity_camara.class);
         startActivity(entrar);
     }
+    public void salir(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
 }

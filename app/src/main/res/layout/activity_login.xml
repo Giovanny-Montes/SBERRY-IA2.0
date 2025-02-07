@@ -5,7 +5,7 @@
     android:id="@+id/login_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#043056"
+    android:background="#575549"
     tools:context=".loginActivity">
 
     <TextView
@@ -171,7 +171,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/google"
         tools:ignore="HardcodedText" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

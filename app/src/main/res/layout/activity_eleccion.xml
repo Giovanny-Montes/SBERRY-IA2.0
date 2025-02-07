@@ -39,29 +39,46 @@
 
         <LinearLayout
             android:layout_width="412dp"
-            android:layout_height="355dp"
+            android:layout_height="362dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/boton_archivo"
-                android:layout_width="137dp"
-                android:layout_height="135dp"
-                android:backgroundTint="#00FFFFFF"
-                android:onClick="eleccion_galleria"
-                android:scaleX="0.8"
-                android:scaleY="0.8"
-                app:srcCompat="@drawable/view_search_find_image_photo_6099" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="278dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/texto_galleria"
+                <ImageButton
+                    android:id="@+id/boton_archivo"
+                    android:layout_width="137dp"
+                    android:layout_height="135dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#00FFFFFF"
+                    android:onClick="eleccion_galleria"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    app:srcCompat="@drawable/view_search_find_image_photo_6099" />
+
+                <TextView
+                    android:id="@+id/texto_galleria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:text="Imagen desde Archivo" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/boton_salir2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center_horizontal"
-                android:text="Imagen desde Archivo" />
+                android:layout_margin="16dp"
+                android:onClick="salir"
+                android:text="Atras"
+                tools:ignore="ButtonStyle,HardcodedText" />
         </LinearLayout>
 
     </LinearLayout>

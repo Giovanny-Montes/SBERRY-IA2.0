@@ -19,8 +19,8 @@
         app:layout_constraintVertical_bias="0.225" />
 
     <FrameLayout
-        android:layout_width="207dp"
-        android:layout_height="68dp"
+        android:layout_width="113dp"
+        android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,10 +28,12 @@
 
         <Button
             android:id="@+id/button_regresar_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:hapticFeedbackEnabled="true"
             android:text="Regresar"
+            android:textAlignment="center"
             tools:ignore="HardcodedText" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
