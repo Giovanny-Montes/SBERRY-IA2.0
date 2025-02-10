@@ -39,7 +39,7 @@ android {
 dependencies {
     implementation("androidx.activity:activity:1.9.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.firebase:firebase-auth:23.0.0")
+    implementation("com.google.firebase:firebase-auth:23.2.0")
     implementation("com.android.support:support-annotations:28.0.0")
     implementation("androidx.media3:media3-common:1.4.1")
     implementation("androidx.wear:wear-ongoing:1.0.0")
@@ -56,9 +56,9 @@ dependencies {
     implementation ("androidx.camera:camera-lifecycle:1.3.4")
     implementation ("androidx.camera:camera-view:1.3.4")
     // Import the BoM for the Firebase platform
-    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
-    implementation("com.google.android.gms:play-services-auth:21.2.0")
-    implementation("com.google.firebase:firebase-auth:23.0.0")
+    implementation(platform("com.google.firebase:firebase-bom:33.9.0"))
+    implementation("com.google.android.gms:play-services-auth:20.6.0")
+    implementation("com.google.firebase:firebase-auth:23.2.0")
     // Also add the dependency for the TensorFlow Lite library and specify its version
     implementation("org.tensorflow:tensorflow-lite:2.16.1")
     implementation("org.tensorflow:tensorflow-lite-support:0.4.4")

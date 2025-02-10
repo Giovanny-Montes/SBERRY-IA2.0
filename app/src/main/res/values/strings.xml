@@ -5,4 +5,13 @@
     <string name="texto_cambiar">Cambiar</string>
     <string name="aviso_inicio_de_sesion">Para usar la aplicación necesitarás una cuenta</string>
     <string name="nombre_app_inicio">AMAI-B</string>
+    <string name="register_title">Ingrese sus datos para registrarse</string>
+    <string name="email">Correo</string>
+    <string name="password">Contraseña</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="back">Regresar</string>
+    <string name="register">Registrar</string>
+    <string name="register_logo_description">logo de la parte de registro</string>
+    <string name="enviar">Enviar</string>
+    <string name="recover_password_title">Recuperar contraseña</string>
 </resources>

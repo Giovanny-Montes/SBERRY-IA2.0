@@ -5,7 +5,7 @@
     android:id="@+id/login_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#575549"
+    android:background="#009688"
     tools:context=".loginActivity">
 
     <TextView
@@ -13,6 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
         android:text="@string/nombre_app_inicio"
         android:textColor="#FFFFFF"
         android:textSize="45sp"
@@ -29,6 +33,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:padding="10dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
         android:text="@string/aviso_inicio_de_sesion"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -68,10 +76,9 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:hint=" Correo"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
-                tools:ignore="HardcodedText" />
+                android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -89,11 +96,9 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:ems="10"
-                android:hint="Contraseña"
+                android:hint="@string/password"
                 android:inputType="textPassword"
-                tools:ignore="HardcodedText" />
+                android:padding="16dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -142,18 +147,24 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/contrasena"
+        android:id="@+id/recuperar_contrasena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:padding="10dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
         android:text="Olvidé la contraseña"
-        android:textColor="#FBFBFB"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/sing_in_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.214"
+        app:layout_constraintVertical_bias="0.338"
         tools:ignore="HardcodedText" />
 
     <ImageButton
@@ -163,7 +174,6 @@
         android:layout_marginBottom="156dp"
         android:background="#00FFFFFF"
         android:baselineAlignBottom="false"
-        android:clickable="true"
         android:contentDescription="Botón de google"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"

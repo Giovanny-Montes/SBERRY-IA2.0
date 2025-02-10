@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "41174541673-i2eftue3ph3bj1no18f67nbghv21vo8d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epsiloncob.amai_b",
+            "certificate_hash": "b475b873c08935c35329d45d0fd0b86468de0381"
+          }
+        },
+        {
           "client_id": "41174541673-0tmbfuetvd9lm1pdsdrdjhhck32gtg8l.apps.googleusercontent.com",
           "client_type": 3
         }

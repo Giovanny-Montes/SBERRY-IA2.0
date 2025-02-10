@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -20,7 +21,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -33,101 +36,73 @@ public class loginActivity extends AppCompatActivity implements GoogleApiClient.
     private FirebaseAuth mAuth;
     private EditText usernameEditText;
     private EditText passwordEditText;
+    private TextView nav_recuperar_contrasena;
     private GoogleApiClient mGoogleApiClient;
     private static final int RC_SIGN_IN = 9001;
     private static final String TAG = "SignInActivity";
-    GoogleSignInAccount acct =null;
+    GoogleSignInAccount acct = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialized Firebase Authentication
         mAuth = FirebaseAuth.getInstance();
 
-        // Configured Google Sign-In options
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
-        // Built GoogleApiClient
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        // Adjusted padding for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.login_main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // Initialized views
         ImageButton btn_iniciar_sesion = findViewById(R.id.btn_iniciar_sesion);
         ImageButton btn_register = findViewById(R.id.btn_nav_registro);
         ImageButton sing_in_button = findViewById(R.id.sing_in_button);
         usernameEditText = findViewById(R.id.email);
         passwordEditText = findViewById(R.id.password);
+        nav_recuperar_contrasena = findViewById(R.id.recuperar_contrasena);
 
-        // Set listener for the login button
-        btn_iniciar_sesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String emailUser = usernameEditText.getText().toString().trim();
-                String passUser = passwordEditText.getText().toString().trim();
+        btn_iniciar_sesion.setOnClickListener(view -> {
+            String emailUser = usernameEditText.getText().toString().trim();
+            String passUser = passwordEditText.getText().toString().trim();
 
-                if (emailUser.isEmpty() || passUser.isEmpty()) {
-                    Toast.makeText(loginActivity.this, "Please enter your credentials", Toast.LENGTH_SHORT).show();
-                } else {
-                    loginUser(emailUser, passUser);
-                }
+            if (emailUser.isEmpty() || passUser.isEmpty()) {
+                Toast.makeText(loginActivity.this, "Please enter your credentials", Toast.LENGTH_SHORT).show();
+            } else {
+                loginUser(emailUser, passUser);
             }
         });
 
-        // Set listener for the registration button
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(loginActivity.this, registroActivity.class));
-            }
-        });
+        btn_register.setOnClickListener(view -> startActivity(new Intent(loginActivity.this, registroActivity.class)));
 
-        // Set listener for the Google Sign-In button
-        sing_in_button.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                loginWithGoogle();
-            }
-        });
+        nav_recuperar_contrasena.setOnClickListener(view -> startActivity(new Intent(loginActivity.this, recuperar_contrasenia.class)));
+
+        sing_in_button.setOnClickListener(view -> loginWithGoogle());
     }
 
-    // Attempted to log in the user with email and password
     private void loginUser(String emailUser, String passUser) {
         mAuth.signInWithEmailAndPassword(emailUser, passUser)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            finish();
-                            startActivity(new Intent(loginActivity.this, MainActivity.class));
-                            Toast.makeText(loginActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(loginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
-                        }
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        startActivity(new Intent(loginActivity.this, MainActivity.class));
+                        Toast.makeText(loginActivity.this, "Bienvenido!", Toast.LENGTH_SHORT).show();
+                        finish();
+                    } else {
+                        Toast.makeText(loginActivity.this, "Algo salió mal", Toast.LENGTH_SHORT).show();
                     }
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(loginActivity.this, "Error during login", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                .addOnFailureListener(e -> Toast.makeText(loginActivity.this, "Error durante el login", Toast.LENGTH_SHORT).show());
     }
 
-
-
-    // Inicia todo el modelo de entrada para google
     private void loginWithGoogle() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -142,23 +117,38 @@ public class loginActivity extends AppCompatActivity implements GoogleApiClient.
         }
     }
 
-    // Handled the result of the Google Sign-In attempt
     private void handleSignInResult(GoogleSignInResult result) {
         Log.d(TAG, "handleSignInResult: " + result.isSuccess());
+
         if (result.isSuccess()) {
             GoogleSignInAccount acct = result.getSignInAccount();
             assert acct != null;
-            Toast.makeText(this, "Bienvenido! "+ acct.getDisplayName(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Bienvenido! " + acct.getDisplayName(), Toast.LENGTH_SHORT).show();
             startActivity(new Intent(loginActivity.this, MainActivity.class));
         } else {
-            Toast.makeText(this, "Google Sign-In failed", Toast.LENGTH_SHORT).show();
+            Status status = result.getStatus();
+            int statusCode = status.getStatusCode();
+            String statusMessage = status.getStatusMessage();
+
+            Log.e(TAG, "Google Sign-In failed. Status Code: " + statusCode + ", Message: " + statusMessage);
+            Toast.makeText(this, "Google Sign-In failed. Status: " + statusMessage, Toast.LENGTH_LONG).show();
+
+            if (statusCode == CommonStatusCodes.SIGN_IN_REQUIRED) {
+                Log.d(TAG, "SIGN_IN_REQUIRED");
+            } else if (statusCode == CommonStatusCodes.NETWORK_ERROR) {
+                Log.d(TAG, "NETWORK_ERROR");
+            } else if (statusCode == CommonStatusCodes.DEVELOPER_ERROR) {
+                Log.d(TAG, "DEVELOPER_ERROR");
+            } else if (statusCode == CommonStatusCodes.INTERNAL_ERROR) {
+                Log.d(TAG, "INTERNAL_ERROR");
+            } else if (statusCode == CommonStatusCodes.INVALID_ACCOUNT) {
+                Log.d(TAG, "INVALID_ACCOUNT");
+            }
         }
     }
 
-
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        // Handle connection failure here.
         Log.d(TAG, "GoogleApiClient connection failed: " + connectionResult.getErrorMessage());
         Toast.makeText(this, "Google API Client connection failed", Toast.LENGTH_SHORT).show();
     }
@@ -167,34 +157,11 @@ public class loginActivity extends AppCompatActivity implements GoogleApiClient.
     protected void onStart() {
         super.onStart();
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
-        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this); // Correct usage
+        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
 
         if (firebaseUser != null || googleUser != null) {
             startActivity(new Intent(loginActivity.this, MainActivity.class));
             finish();
         }
     }
-
-    /*
-    @Override
-    protected void onResume() {
-        super.onResume();
-        FirebaseUser user = mAuth.getCurrentUser();
-
-        if (user != null || acct != null) {
-            Intent entrar = new Intent(loginActivity.this, MainActivity.class);
-            assert user != null;
-            entrar.putExtra("Usuario"+user.getDisplayName(),true);
-            assert acct != null;
-            entrar.putExtra("Usuario"+acct.getDisplayName(),true);
-            startActivity(entrar);
-
-            finish();}
-        else {
-                Toast.makeText(this,"No se encontró ningún usuario",Toast.LENGTH_SHORT).show();
-        }
-    }
-    */
-
-
 }
